@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pirangi Charan Kumar — IT Support & Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --accent: #0b5fff;
+  --muted: #666;
+  --shadow: rgba(0,0,0,0.08);
+  --dark-bg: #121212;
+  --dark-card: #1e1e1e;
+  --dark-text: #eee;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins', sans-serif;}
+body{background:var(--bg);color:#111;line-height:1.6;scroll-behavior:smooth;}
+a{text-decoration:none;color:var(--accent);}
+header{position:sticky;top:0;background:var(--card);display:flex;justify-content:space-between;align-items:center;padding:15px 30px;box-shadow:0 4px 12px var(--shadow);z-index:100;}
+header h1{font-size:26px;}
+nav a{margin-left:20px;font-weight:500;transition:0.3s;}
+nav a:hover{color:#0551cc;}
+.btn{cursor:pointer;padding:6px 12px;border-radius:6px;background:var(--accent);color:white;border:none;transition:0.3s;}
+.btn:hover{opacity:0.85;}
+.container{max-width:1200px;margin:auto;padding:20px;}
+.card{background:var(--card);border-radius:12px;box-shadow:0 8px 28px var(--shadow);padding:20px;margin-bottom:25px;opacity:0;transform:translateY(40px);transition:0.6s;}
+.card.visible{opacity:1;transform:translateY(0);}
+h2{margin-bottom:12px;border-bottom:2px solid var(--accent);display:inline-block;padding-bottom:4px;}
+.list{list-style:none;padding-left:0;}
+.list li{padding:6px 0;border-bottom:1px dashed #ddd;}
+.section-columns{display:flex;flex-wrap:wrap;gap:20px;}
+.column{flex:1;min-width:220px;}
+.skill-bar{background:#ddd;border-radius:6px;overflow:hidden;height:10px;margin-bottom:10px;}
+.skill-bar-fill{height:100%;background:var(--accent);width:0%;transition:1s;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
+.project-card{background:#fafafa;padding:15px;border-radius:10px;box-shadow:0 4px 12px var(--shadow);transition:0.3s;}
+.project-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px var(--shadow);}
+footer{text-align:center;margin-top:30px;padding:15px;color:var(--muted);font-size:13px;}
+.dark-mode{background:var(--dark-bg);color:var(--dark-text);}
+.dark-mode .card{background:var(--dark-card);}
+@media(max-width:900px){header{flex-direction:column;align-items:flex-start;}nav a{margin-left:0;margin-top:10px;}.section-columns{flex-direction:column;}}
+/* Login Overlay */
+#loginOverlay{position:fixed;inset:0;background:rgba(10,12,20,0.7);display:flex;align-items:center;justify-content:center;z-index:999;}
+.loginBox{background:white;padding:30px;border-radius:12px;width:360px;box-shadow:0 12px 40px rgba(2,8,23,0.6);}
+.loginBox h3{margin-bottom:15px;font-size:20px;}
+.loginBox label{display:block;font-size:14px;margin-top:10px;}
+.loginBox input{width:100%;padding:8px;margin-top:5px;border-radius:6px;border:1px solid #ddd;}
+.loginActions{display:flex;gap:10px;margin-top:15px;}
+</style>
+</head>
+<body>
+
+<!-- Login Overlay -->
+<div id="loginOverlay">
+  <div class="loginBox">
+    <h3>Private — Please sign in</h3>
+    <label>Username</label>
+    <input id="username" placeholder="username">
+    <label>Password</label>
+    <input type="password" id="password" placeholder="password">
+    <div class="loginActions">
+      <button id="loginBtn" class="btn">Sign in</button>
+      <button id="clearBtn" style="background:#eee;color:#111;border-radius:6px;padding:8px 10px;border:none;">Clear</button>
+    </div>
+    <div style="font-size:12px;color:#888;margin-top:8px;">Credentials: <strong>Pirangi7 / Project2002</strong></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <h1>Pirangi Charan Kumar</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#hobbies">Hobbies</a>
+    <a href="#declaration">Declaration</a>
+    <a href="#contact">Contact</a>
+    <button id="darkToggle" class="btn">Dark Mode</button>
+  </nav>
+</header>
+
+<div class="container">
+  <!-- About -->
+  <div id="about" class="card"><h2>About Me</h2><p>I am an IT Support Engineer with hands-on experience in troubleshooting hardware, software, and network systems for 2000+ users. Skilled in automation, scripting, and web development, I aim to reduce downtime and improve workflows efficiently.</p></div>
+
+  <!-- Experience -->
+  <div id="experience" class="card">
+    <h2>Experience</h2>
+    <div class="section-columns">
+      <div class="column"><strong>Desktop Support Engineer</strong><p>CMS IT Services — Provided support for 2000+ users, created SOPs, monitored tickets, resolved Outlook & system issues.</p></div>
+      <div class="column"><strong>Web Development Intern</strong><p>Developed responsive web pages and performed UI optimization during internship.</p></div>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div id="projects" class="card"><h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card"><strong>System Health Monitoring Tool</strong><p>Automation project to analyze and report real-time system performance using scripts.</p></div>
+      <div class="project-card"><strong>Face Mask Detection</strong><p>Deep learning project using modified CNN.</p></div>
+      <div class="project-card"><strong>Automation scripts for ticket triage</strong><p>Python / PowerShell-based workflow enhancement.</p></div>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div id="skills" class="card"><h2>Skills</h2>
+    <div class="section-columns">
+      <div class="column"><strong>Troubleshooting Outlook & Windows</strong><div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div></div>
+      <div class="column"><strong>Networking (VPN, DNS), Intune</strong><div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div></div>
+      <div class="column"><strong>Python, PowerShell, Bash</strong><div class="skill-bar"><div class="skill-bar-fill" data-width="80%"></div></div></div>
+      <div class="column"><strong>Git / GitHub</strong><div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div></div>
+      <div class="column"><strong>Web Development (HTML, CSS, JS)</strong><div class="skill-bar"><div class="skill-bar-fill" data-width="75%"></div></div></div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div id="education" class="card"><h2>Education</h2><p>B.Tech in Computer Science Engineering (2019–2023) — 70%</p></div>
+
+  <!-- Hobbies -->
+  <div id="hobbies" class="card"><h2>Hobbies</h2><ul class="list"><li>Reading technical blogs</li><li>Web Development & UI Design</li><li>Machine Learning projects</li><li>Traveling & Photography</li><li>Gaming & Puzzles</li></ul></div>
+
+  <!-- Declaration -->
+  <div id="declaration" class="card"><h2>Declaration</h2><p>I hereby declare that the information provided above is true to the best of my knowledge and belief.</p></div>
+
+  <!-- Contact -->
+  <div id="contact" class="card"><h2>Contact</h2>
+    <p>Email: <a href="mailto:charanwork7@gmail.com">charanwork7@gmail.com</a></p>
+    <p>Phone: +91 8125809851</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/pirangi-charan-kumar-49115a38a" target="_blank">linkedin.com/in/pirangi-charan-kumar</a></p>
+  </div>
+</div>
+<footer>Made with ♥ by Pirangi Charan Kumar</footer>
+
+<script>
+// Login
+const overlay=document.getElementById('loginOverlay');
+const correctUser='Pirangi7';
+const correctPass='Project2002';
+document.getElementById('loginBtn').addEventListener('click',()=>{
+  const user=document.getElementById('username').value.trim();
+  const pass=document.getElementById('password').value;
+  if(user===correctUser && pass===correctPass){overlay.style.display='none'; animateSkills();}else{alert('Incorrect username or password');}
+});
+document.getElementById('clearBtn').addEventListener('click',()=>{document.getElementById('username').value=''; document.getElementById('password').value='';});
+
+// Dark Mode Toggle
+document.getElementById('darkToggle').addEventListener('click',()=>{document.body.classList.toggle('dark-mode');});
+
+// Animate Skill Bars
+function animateSkills(){document.querySelectorAll('.skill-bar-fill').forEach(bar=>{bar.style.width=bar.getAttribute('data-width');});}
+
+// Fade-in on scroll
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.2});
+document.querySelectorAll('.card').forEach(card=>observer.observe(card));
+</script>
+
+</body>
+</html>
