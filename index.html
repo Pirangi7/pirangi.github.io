@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pirangi Charan Kumar — IT Support Engineer</title>
+  <style>
+    :root{--bg:#f6f8fb;--card:#ffffff;--accent:#0b5fff;--muted:#666}
+    body{font-family:Inter, system-ui, Arial; margin:0; background:var(--bg); color:#111}
+    .center{display:flex;align-items:center;justify-content:center;height:100vh}
+    .card{width:min(900px,95%);background:var(--card);border-radius:12px;box-shadow:0 8px 28px rgba(12,20,50,0.08);overflow:hidden}
+    header{display:flex;gap:20px;padding:28px;border-bottom:1px solid #eee}
+    .photo{width:96px;height:96px;border-radius:12px;background:#e9eefc;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)}
+    h1{margin:0;font-size:20px}
+    p.role{margin:6px 0 0;color:var(--muted)}
+    main{display:flex;gap:28px;padding:28px}
+    .left{flex:1;min-width:260px}
+    .right{flex:2}
+    h2{margin:0 0 10px;font-size:16px}
+    .section{margin-bottom:18px}
+    .list{margin:0;padding:0;list-style:none}
+    .list li{padding:6px 0;border-bottom:1px dashed #f1f1f1}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:white;text-decoration:none}
+    footer{padding:16px;border-top:1px solid #eee;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Login overlay */
+    #loginOverlay{position:fixed;inset:0;background:rgba(10,12,20,0.55);display:flex;align-items:center;justify-content:center}
+    .loginBox{background:white;padding:22px;border-radius:12px;min-width:320px;box-shadow:0 12px 40px rgba(2,8,23,0.6)}
+    .loginBox h3{margin:0 0 12px}
+    .loginBox label{display:block;font-size:13px;margin-top:8px}
+    .loginBox input{width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #ddd}
+    .loginActions{display:flex;gap:8px;align-items:center;margin-top:12px}
+    .hint{font-size:12px;color:#888;margin-top:8px}
+  </style>
+</head>
+<body>
+  <!-- Login overlay (simple client-side protection) -->
+  <div id="loginOverlay">
+    <div class="loginBox">
+      <h3>Private — Please sign in</h3>
+      <label>Username</label>
+      <input id="username" placeholder="your username" />
+      <label>Password</label>
+      <input id="password" type="password" placeholder="your password" />
+      <div class="loginActions">
+        <button id="loginBtn" class="btn">Sign in</button>
+        <button id="clearBtn" style="background:#eee;color:#111;border-radius:8px;padding:8px 10px;border:none">Clear</button>
+      </div>
+      <div class="hint">Default demo credentials: <strong>user: Pirangi7</strong> / <strong>pass: Project2002</strong>. Change these in the file before publishing. <span style="color:#c00">(Not secure — read notes below.)</span></div>
+    </div>
+  </div>
+
+  <div class="center">
+    <div class="card" id="content" aria-hidden="true">
+      <header>
+        <div class="photo">PC</div>
+        <div>
+          <h1>Pirangi Charan Kumar</h1>
+          <div class="role">Desktop Support Engineer | 2+ years | CMS IT Services</div>
+          <div style="margin-top:8px"><a class="btn" href="#contact">Contact</a></div>
+        </div>
+      </header>
+      <main>
+        <aside class="left">
+          <div class="section">
+            <h2>Skills</h2>
+            <ul class="list">
+              <li>Troubleshooting Outlook & Windows</li>
+              <li>Networking (VPN, DNS), Intune</li>
+              <li>Python, PowerShell, Bash</li>
+              <li>Git / GitHub</li>
+              <li>Web Development (HTML, CSS, JS)</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Education</h2>
+            <p>B.Tech — Specialization: Software Development</p>
+          </div>
+
+          <div class="section">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:charanwork7@gmail.com">charanwork7@gmail.com</a></p>
+            <p>Phone: +91 8125809851</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/pirangi-charan-kumar-49115a38a" target="_blank">linkedin.com/in/pirangi-charan-kumar</a></p>
+          </div>
+        </aside>
+
+        <section class="right">
+          <div class="section">
+            <h2>About</h2>
+            <p>I am an IT Support Engineer with hands-on experience in troubleshooting hardware, software, and network systems in enterprise settings. I focus on reducing downtime, improving workflows, and delivering high-quality support to over <strong>2000+ users</strong>.</p>
+          </div>
+
+          <div class="section">
+            <h2>Experience</h2>
+            <ul class="list">
+              <li><strong>Desktop Support Engineer</strong> — CMS IT Services. Provided system and application support for 2000+ users across multiple branches, created SOPs, monitored tickets, and resolved critical Outlook and system issues.</li>
+              <li><strong>Web Development Intern</strong> — Developed responsive web pages and performed UI optimization during internship.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>Projects</h2>
+            <ul class="list">
+              <li><strong>System Health Monitoring Tool</strong> — Automation project to analyze and report real-time system performance using scripts.</li>
+              <li><strong>Face Mask Detection</strong> — Deep learning project using modified CNN (personal project).</li>
+              <li><strong>Automation scripts for ticket triage</strong> — PowerShell / Python-based workflow enhancement.</li>
+            </ul>
+          </div>
+
+          <div class="section" id="contact">
+            <h2>Download Resume</h2>
+            <p><a class="btn" href="#" onclick="alert('Replace this link with your resume file path after uploading to the site (example: /resume.pdf)')">Download PDF</a></p>
+          </div>
+        </section>
+      </main>
+      <footer>Made with ♥ — update this page to reflect your latest resume</footer>
+    </div>
+  </div>
+
+  <script>
+    // Client-side login credentials updated
+    const correct = { user: 'Pirangi7', pass: 'Project2002' };
+    const loginOverlay = document.getElementById('loginOverlay');
+    const content = document.getElementById('content');
+    document.getElementById('loginBtn').addEventListener('click', tryLogin);
+    document.getElementById('clearBtn').addEventListener('click', ()=>{document.getElementById('username').value='';document.getElementById('password').value='';});
+    function tryLogin(){
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value;
+      if(u === correct.user && p === correct.pass){
+        loginOverlay.style.display='none';
+        content.setAttribute('aria-hidden','false');
+      } else {
+        alert('Incorrect username or password.');
+      }
+    }
+
+    document.addEventListener('keydown', e=>{ if(e.key === 'Enter' && (document.getElementById('username') === document.activeElement || document.getElementById('password') === document.activeElement)) tryLogin(); });
+  </script>
+</body>
+</html>
